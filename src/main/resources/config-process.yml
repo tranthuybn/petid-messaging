@@ -1,0 +1,54 @@
+#Configuration for all thread
+#node name, as a key to manage load balancer
+nodeName: node1
+#in seconds
+monitorSleepTime: 5
+
+executorConfigs:
+  sendSmsExecutor:
+    monitorName: "SendSmsExecutor"
+    enabled: true
+    coreSize: 100
+    maxSize: 150
+    keepAliveTime: 30 #in seconds
+    queueSize: 100 #blocking queue size for consumer
+    maxActiveTaskAllow: 300
+    configurations:
+      #in minute
+      delayTime: 10
+      defaultUserToCraw: "855718839999"
+  appPushNotificationExecutor:
+    monitorName: "AppPushNotificationExecutor"
+    enabled: true
+    coreSize: 100
+    maxSize: 150
+    keepAliveTime: 30 #in seconds
+    queueSize: 100 #blocking queue size for consumer
+    maxActiveTaskAllow: 300
+    configurations:
+      #in minute
+      delayTime: 10
+      defaultUserToCraw: "855718839999"
+
+processConfigs:
+#  withdrawEMoneyProcess:
+#    threadName: "WithdrawEMoneyProcessBusiness"
+#    businessClass: "app.camid.processapp.process.business.WithdrawEMoneyProcessBusiness"
+#    enabled: true
+#    intervalTime: 15 #in seconds
+#    configurations:
+#      totalNodes: 1
+#      nodeOrder: 0
+#      numOfRecordsToScan: 100
+#      #in minutes
+#      timeDelayToCraw: 5
+#      #in milliseconds
+#      sleepTimeOnEachRow: 500
+#      testConfig2: "Abc xyz"
+  testProcess:
+    threadName: "Test1ProcessBusiness"
+    businessClass: "ht.com.natcash.euapigw.process.business.Test1ProcessBusiness"
+    enabled: false
+    intervalTime: 15 #in seconds
+    configurations:
+      test1: abc

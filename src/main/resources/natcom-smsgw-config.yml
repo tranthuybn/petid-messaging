@@ -1,0 +1,31 @@
+maxTotal: 500
+maxConnectionPerHost: 500
+connectionTimeout: 60000
+connectionRequestTimeout: 60000
+soTimeout: 60000
+idleTimeout: 30000
+
+smsgwProfiles:
+  natCashSmsgwDevelopment:
+    profileName: "natCashSmsgwDevelopment"
+    profileMode: "development"
+#    url: "http://10.228.33.70:9725/vasp/Service.asmx"
+    url: "http://localhost:9725/vasp/Service.asmx?wsdl"
+    username: "gwhaiti"
+    password: "gwhaiti"
+    alias: "202"
+    shortCode: "202"
+    othersConfigs:
+      test1: "test1"
+      other2: 123
+  natCashSmsgwProduction:
+    profileName: "natCashSmsgwProduction"
+    profileMode: "development"
+    url: "http://10.228.33.70:9725/vasp/Service.asmx"
+    username: "gwhaiti"
+    password: "gwhaiti"
+    alias: "202"
+    shortCode: "202"
+    othersConfigs:
+      test1: "test1"
+      other2: 123
