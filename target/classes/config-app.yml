@@ -1,0 +1,43 @@
+#Release mode: "dev", "test", "production"...
+releaseMode: "dev"
+appPrivateKey: "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC0dSDoWJ9B+Ube5EArUuxbcn49LDojE1ucepkUeqIXE62WqDzQc45FbiGJ9JRLTAX6hbbTBF2ojhGEnZ12Hw1fWmwNfgpjDU5mQjyiJdJRzwCeD5+ppgsLU6RPzIEZXo4Ead562BNuo106vpC4cAO0rPN3YOis/IqRT9X3m3lMTiCj0m1FX+fGqSm9/QpXP78N1WxDNezajkOQsosQtnBqi4K0Jtm/wsM5dZMe0TqEdBoXiQ9w1Q9d8W3zJa36Tq9UfpcVoAlCW6umXu6QKKj3LkROK0VeFBri4wCgrCBCyPQXNjBO9mL86MsGOOzL14WLM7NMMPRtRagM0y98r5R9AgMBAAECggEAED+fp+wa4ujcHcO1l3EPASjs/vsVfQUIMa3ETNjB8Yv/DFq3pxlQjSXedTqFg8Yjn6wciyGQgVXRc/xxKiqfnJ9arVhU/Rg8n+6E4SDAsEcQSisj+DWQNwPf/qNuWGdwKCuUMcF09nhVM63nAARuAP21qmEackEHBRCINpRUNq+HV/cZlUFO/l1JQhYwi0XK4148tyEIHpDs0wmeni/lStqXSvWcu6lo2Da1khIoDlcrN6sYV+CmSboE5RCsbOBL8UdL/nNqHTgF+ttPyteDZd3jI8p1gw3EtP5LDIAUk3MwxX/cYtvvOjBwCzOouRdI4GJZIaDxcT4zjC0Q/GUhbQKBgQDrqmcyhw6Y8VFDQ4qG5fHB2jONUaLg4VK7Au6NPZ7IAYNNGzsPTQyo+TqYp1kX99IGtn5iuN6C3nQLO6rYkTTixirOk0mAqtKtTcN0kRPN4EmRk0hpkkiw34rs9rWAjMN1MnBnnvznFFui++WVGTEfI3Ar/Lu2TqL9z1qOZuIMhwKBgQDEBz0XEVAgNh4WfI268728QEtn7fwQoggm0I4rNgaLWtne2hXttMbTgqsWi2/jBA4pHunKToAmnqAFcNQX73fnTEnscNZQVzyAaXhwUMHl6ybE9vHmL4TMPce90acZuRGAxcUjXnHo93I0riaTOr2RUzDUfSLxaU/me2UOhOZ72wKBgQCikHGPkUqohg6gb77nP0d9iZ92JJJOvh/rkSItnAwju6dvURF0hJnvFb0uAIKc3f6rUsfsIcqcTAeQmCBKNCBfLoPo7AEQGMYrdjEV/93Bbq5RFWAmMxqhqBKVU7nwaymJdrnDQRED9i8gRtMf/ri72h5OuZBjOeuFWbwF70KPkQKBgF+XAA09ngr3GNjyR9LAhOdFmv/FJ0OdH8h9rrYXlD1kQhXP1x2hJ8uATpmhyR+0nIskzfCfMxKiC3pbuLErTxb1Np8brwZiY9hilh5+4u6RKsilevQ6e9F01vATSh7bBlP7HNTQe0+VSpWxzpHA9Svmm0si8mUya4oC5hacbCA9AoGAT+Nyeq2iljLJ+NrRsWSQYT7PkuWCgy+xW80rICSwglUfEhZyOmY9cRQzVpD6mnxmQGXHPpE49P/+g00V+G03jNMDohrB+94AqyNlRvKrDPhoD+2qpFO4CJZLgMTMJHSEZiwo3Fjd9Jutm16aTrTnMXeDZ8log7tO2Jrz1CnFD7U="
+appPublicKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtHUg6FifQflG3uRAK1LsW3J+PSw6IxNbnHqZFHqiFxOtlqg80HOORW4hifSUS0wF+oW20wRdqI4RhJ2ddh8NX1psDX4KYw1OZkI8oiXSUc8Ang+fqaYLC1OkT8yBGV6OBGneetgTbqNdOr6QuHADtKzzd2DorPyKkU/V95t5TE4go9JtRV/nxqkpvf0KVz+/DdVsQzXs2o5DkLKLELZwaouCtCbZv8LDOXWTHtE6hHQaF4kPcNUPXfFt8yWt+k6vVH6XFaAJQlurpl7ukCio9y5ETitFXhQa4uMAoKwgQsj0FzYwTvZi/OjLBjjsy9eFizOzTDD0bUWoDNMvfK+UfQIDAQAB"
+clientRestriction:
+  #Android build key
+  - "82:2D:F7:D6:F3:88:40:90:9C:51:DD:61:AF:3F:F6:4D:E4:B3:F4:DC"
+  #iOS bundle
+  - "vn.supper.app.apigw"
+  - "vn.supper.app.apigw.dev"
+  - "vn.supper.app.apigw.test"
+othersConfigs:
+  #common configuration
+  txtemplate.all.page-size: 100
+  txtemplate.recent.page-size: 10
+
+consumers:
+  vnPetIdDev:
+    name: "vnPetIdDev"
+    apiKey: "f95cfdb619af1bb5630cbf95f7e20b2e21af389fc8459f07e07507c5768f2b9b"
+    #validity: * = unlimited; dd/MM/yyyy HH:mm:ss
+    validity: "*"
+    #ip restriction: arrays of ip
+    ipRestrictions: []
+    #config for sms
+    checkSmsReceiverWhitelist: true
+    smsReceiverWhitelist: []
+    smsProfileName: "natCashSmsgwDevelopment"
+    #config for firebase
+    firebaseProfileName: "natCashFirebaseDevelopment"
+  vnPetIdProduction:
+    name: "natcashProduction"
+    apiKey: "f95cfdb619af1bb5630cbf95f7e20b2e21af389fc8459f07e07507c5768f2b9b"
+    #validity: * = unlimited; dd/MM/yyyy HH:mm:ss
+    validity: "*"
+    #ip restriction: arrays of ip
+    ipRestrictions: []
+    #config for sms
+    checkSmsReceiverWhitelist: false
+    smsReceiverWhitelist: []
+    smsProfileName: "natCashSmsgwDevelopment"
+    #config for firebase
+    firebaseProfileName: "natCashFirebaseDevelopment"

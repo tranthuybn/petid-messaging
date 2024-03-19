@@ -1,0 +1,131 @@
+#The pool consists of a fixed number of core threads that are kept inside all the time,
+# and some excessive threads that may be spawned and then terminated when they are not needed anymore.
+#The corePoolSize parameter is the amount of core threads which will be instantiated and kept in the pool.
+# If all core threads are busy and more tasks are submitted, then the pool is allowed to grow up to a maximumPoolSize.
+#The keepAliveTime parameter is the interval of time for which the excessive threads
+# (i.e. threads that are instantiated in excess of the corePoolSize) are allowed to exist in the idle state.
+#Metfone SMSC configuration
+#The pool consists of a fixed number of core threads that are kept inside all the time,
+# and some excessive threads that may be spawned and then terminated when they are not needed anymore.
+#The corePoolSize parameter is the amount of core threads which will be instantiated and kept in the pool.
+# If all core threads are busy and more tasks are submitted, then the pool is allowed to grow up to a maximumPoolSize.
+#The keepAliveTime parameter is the interval of time for which the excessive threads
+# (i.e. threads that are instantiated in excess of the corePoolSize) are allowed to exist in the idle state.
+#Metfone SMSC configuration
+
+metfoneSmscConfigInfo:
+  threadPoolConfigInfo: #SMS Process thread pool configuration
+    coreSize: 100
+    maxSize: 150
+    keepAliveTime: 30 #in seconds
+    queueSize: 100 #blocking queue size for consumer
+  host: 10.79.30.24
+  port: 9876
+  username: vas868
+  #ewzx891
+  password: 03ca49b6c6d202f9a07a903129480f53
+  systemType: cp
+  brandNameList: ["eMoney", "eMoney Test"]
+  #Metfone: (00855|855|0|)((60|66|67|68|90)\\d{6}|(31|71|88|97)\\d{7})
+  #Cellcard: (00855|855|0|)((11|14|17|61|77|78|79|85|92|95|99|235)\\d{6}|76\\d{7}|12\\d{6,7})
+  receiverRegularExpression: (855)((11|14|17|60|61|66|67|68|77|78|79|85|89|90|92|95|99|235|236)[0-9]{6}|(31|71|76|88|97)[0-9]{7}|(12)[0-9]{6,7}) #Live
+  #receiverRegularExpression: (855)((11|14|17|60|61|66|67|68|77|78|79|85|90|92|95|99|235)[0-9]{6}|(31|71|76|88|97)[0-9]{7}|(12)[0-9]{6,7}) #Test
+  smppSessionConfigInfo:
+    queueSize: 3
+
+cambopaySmsgwConfigInfo:
+  threadPoolConfigInfo: #SMS Process thread pool configuration
+    coreSize: 100
+    maxSize: 150
+    keepAliveTime: 30 #in seconds
+    queueSize: 100 #blocking queue size for consumer
+  #0: Off; 1: On; 2: Custom
+  enabledMode: 0
+  url: http://10.79.75.2/METFONESMS/MTSend.asmx
+  xmlns: http://www.vnpay.vn/VASContent/SendMT
+  brandName: eMoney
+  keyword: MF
+  secretCode: A486CAB4-D274-431F-A77D-3C2E6B595C19
+  brandNameList: ["eMoney", "eMoney Test"]
+  #Smart: (00855|855|0|)((10|15|16|69|70|81|86|87|93|98)\\d{6}|96\\d{7})
+  #receiverRegularExpression: (855)((10|15|16|69|70|81|86|87|93|98)[0-9]{6}|(96)[0-9]{7}) #Live
+  #receiverRegularExpression: (855)((10|15|16|69|70|81|86|87|93|98)[0-9]{6}|(96)[0-9]{7}) #Test
+  receiverRegularExpression: "" #Test
+  configurations:
+    #config for MultiThreadedHttpConnectionManager
+    connectionTimeout: 60000 #in milliseconds
+    soTimeout: 60000 #in milliseconds
+    maxHostConnection: 5
+
+metfoneB2BSmsgwConfigInfo:
+  threadPoolConfigInfo: #SMS Process thread pool configuration
+    coreSize: 100
+    maxSize: 150
+    keepAliveTime: 30 #in seconds
+    queueSize: 100 #blocking queue size for consumer
+  #0: Off; 1: On; 2: Custom
+  enabledMode: 1
+  receiverRegularExpression: "(855)((10|15|16|69|70|81|86|87|93|98)[0-9]{6}|(96)[0-9]{7})"
+  brandNameList: ["eMoney", "eMoneyTest", "SmartTEST"]
+  smsProfileInfo:
+    production:
+      url: "http://bizsms.metfone.com.kh:8804/bulkapi?wsdl"
+      xmlns: "http://impl.bulkSms.ws/CcApi/wsCpMtRequest"
+      brandName: "eMoney"
+      #user
+      keyword: "emoney"
+      #password
+      secretCode: "Met@12#$"
+      commandCode: "bulksms"
+      cpCode: "EMONEY"
+    test:
+      url: "http://bizsms.metfone.com.kh:8804/bulkapi?wsdl"
+      xmlns: "http://impl.bulkSms.ws/CcApi/wsCpMtRequest"
+      brandName: "eMoney"
+      #user
+      keyword: "ac_api"
+      #password
+      secretCode: "Met168A!"
+      commandCode: "bulksms"
+      cpCode: "ACLD"
+  configurations:
+    #config for MultiThreadedHttpConnectionManager
+    connectionTimeout: 60000 #in milliseconds
+    soTimeout: 60000 #in milliseconds
+    maxHostConnection: 200
+
+firebaseApsConfigInfo:
+  threadPoolConfigInfo: #SMS Process thread pool configuration
+    coreSize: 100
+    maxSize: 150
+    keepAliveTime: 30 #in seconds
+    queueSize: 100 #blocking queue size for consumer
+  configurations:
+    #config for MultiThreadedHttpConnectionManager
+    connectionTimeout: 60000 #in milliseconds
+    soTimeout: 60000 #in milliseconds
+    maxHostConnection: 5
+  credentialFile: "../etc/emoney-146906-3ba78f163572.json"
+  databaseUrl: "https://emoney-146906.firebaseio.com"
+
+threadMonitorConfigInfo:
+  sleepTime: 5 #in seconds
+
+consumerConfigInfo:
+  eMoney:
+    name: eMoney
+    apiKey: f95cfdb619af1bb5630cbf95f7e20b2e21af389fc8459f07e07507c5768f2b9b
+    #validity: * = unlimited; dd/MM/yyyy HH:mm:ss
+    validity: "*"
+    #ip restriction: arrays of ip
+    ipRestrictions: []
+    senderWhiteList: ["eMoney"]
+  eMoneyTest:
+    name: eMoneyTest
+    apiKey: f95cfdb619af1bb5630cbf95f7e20b2e21af389fc8459f07e07507c5768f2b9b
+    #validity: * = unlimited; dd/MM/yyyy HH:mm:ss
+    validity: "*"
+    #ip restriction: arrays of ip
+    ipRestrictions: []
+    senderWhiteList: ["eMoney Test"]
+    receiverWhiteList: ["855888288688", "855883970777", "85570256959", "855965226522", "85593313467", "855972152686", "855889361404", "855886391182", "85561896631", "855968183916", "855718666666","855975968888","855714320605","855889774109","855975055551","855884317808","855972864386","855312594354","855312566904","855312566832", "855312594390","855312594336","855312566940","855312594408", "855969123269","855887883969","855972152686","85568613900","85587840864","85587841127", "855889333093", "855886080886", "85577206906"]

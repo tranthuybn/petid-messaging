@@ -1,0 +1,8 @@
+credentialFile: "./vnpetid-16d4a-firebase-adminsdk-t3ynh-4d2b460a97.json"
+databaseUrl: "https://vnpetid-16d4a-default-rtdb.firebaseio.com/"
+credentialFileAgent: "./vnpetid-doctor-firebase-adminsdk-4u99y-60ecc792c2.json"
+databaseUrlAgent: "https://vnpetid-doctor-default-rtdb.firebaseio.com/"
+icon: ""
+sound: "default"
+ttl: 3600000
+color: "#f45342"

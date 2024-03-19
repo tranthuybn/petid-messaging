@@ -1,0 +1,201 @@
+#Common undefined configurations
+configurations:
+  test1: test1
+  test2: test2
+
+feeMaintenanceConfigs:
+  senderWallet: "855888288688"
+  receiverWallet: "855883970777"
+
+buyData:
+  - groupId: 0
+    code: "0"
+    name:
+      en: "Data Internet"
+      fr: "Data Internet"
+      ht: "Data Internet"
+    serviceCode: "BUY_DATA"
+    partnerCode: "NATCOM"
+    packages:
+    - id: 1
+      code: "750"
+      title: "MU400"
+      subTitle: "6GB + BONUS 6GB for 30 days"
+      description: "MU400= 12GB/30 days"
+      value: 400.0
+      icon: "/mg/games/icon/test.png"
+      name: "750GB"
+      shortName: "MU40"
+    - id: 2
+      code: "400"
+      title: "Supper data 75"
+      subTitle: "6GB + BONUS 6GB +Unlimited Nat-Nat + FREE FB/WA/IG for 3 days"
+      description: "SuperData75=12GB/3 days"
+      value: 75.0
+      icon: "/mg/games/icon/test.png"
+      name: "750GB"
+      shortName: "Supper 75"
+    - id: 3
+      code: "AP20"
+      title: "AnnPale20"
+      subTitle: "20mn + BONUS 20mn Nat-Nat until Midnight"
+      description: "AnnPale20=40mn/Midnight"
+      value: 12.0
+      icon: "/mg/games/icon/test.png"
+      name: "750GB"
+      shortName: "Ann 20"
+    - id: 4
+      code: "DL35A"
+      title: "DL35"
+      subTitle: "2.5GB + BONUS 2.5GB until Midnight"
+      description: "DL35=5GB/Midnight"
+      value: 35.0
+      icon: "/mg/games/icon/test.png"
+      name: "750GB"
+      shortName: "DL35"
+    - id: 5
+      code: "X50"
+      title: "Xchange50"
+      subTitle: "3000HTG+BONUS 3000HTG Internet/Nat-Nat+FREE IG/WA/FB for 7d"
+      description: "Xchange50=6000HTG/7 days"
+      value: 50.0
+      icon: "/mg/games/icon/test.png"
+      name: "750GB"
+      shortName: "X 50"
+  - groupId: 1
+    code: "1"
+    name:
+      en: "Youtube"
+      fr: "Youtube"
+      ht: "Youtube"
+    serviceCode: "BUY_DATA"
+    partnerCode: "NATCOM"
+    packages:
+    - id: 1
+      code: "X50"
+      title: "Xchange50"
+      subTitle: "3000HTG+BONUS 3000HTG Internet/Nat-Nat+FREE IG/WA/FB for 7d"
+      description: "Xchange50=6000HTG/7 days"
+      value: 50.0
+      icon: "/mg/games/icon/test.png"
+      name: "750GB"
+      shortName: "X50"
+
+transHisProcessCodeConfigs:
+  - groupId: 0
+    groupCode: ALL
+    groupName:
+      en: "All"
+      fr: "All"
+      ht: "All"
+    processCodeList:
+    - processCode: ""
+      processName:
+        en: "All"
+        fr: "All"
+        ht: "All"
+      serviceCode: ""
+      paymentCode: ""
+      partnerCode: ""
+    offset: 5
+    limit: 3
+  - groupId: 1
+    groupCode: TRANSFER
+    groupName:
+      en: "Transfer"
+      fr: "Transfer"
+      ht: "Transfer"
+    processCodeList:
+    - processCode: "021000"
+      processName:
+        en: "Transfer NATCASH"
+        fr: "Transfer NATCASH"
+        ht: "Transfer NATCASH"
+      serviceCode: ""
+      paymentCode: ""
+      partnerCode: ""
+    offset: 5
+    limit: 3
+  - groupId: 2
+    groupCode: BILL
+    groupName:
+      en: "BILL"
+      fr: "BILL"
+      ht: "BILL"
+    processCodeList:
+    - processCode: "571000"
+      processName:
+        en: "BILL NATCASH"
+        fr: "BILL NATCASH"
+        ht: "BILL NATCASH"
+      serviceCode: ""
+      paymentCode: ""
+      partnerCode: ""
+    offset: 3
+    limit: 3
+  - groupId: 3
+    groupCode: CASHOUT
+    groupName:
+      en: "CASHOUT"
+      fr: "CASHOUT"
+      ht: "CASHOUT"
+    processCodeList:
+    - processCode: "021000"
+      processName:
+        en: "CASHOUT NATCASH SHOWROOM"
+        fr: "CASHOUT NATCASH SHOWROOM"
+        ht: "CASHOUT NATCASH SHOWROOM"
+      serviceCode: ""
+      paymentCode: ""
+      partnerCode: ""
+    - processCode: "010101"
+      processName:
+        en: "CASHOUT NATCASH AGENT"
+        fr: "CASHOUT NATCASH AGENT"
+        ht: "CASHOUT NATCASH AGENT"
+      serviceCode: ""
+      paymentCode: ""
+      partnerCode: ""
+    offset: 3
+    limit: 10
+  - groupId: 4
+    groupCode: BUYDATA
+    groupName:
+      en: "BUYDATA"
+      fr: "BUYDATA"
+      ht: "BUYDATA"
+    processCodeList:
+    - processCode: "571000"
+      processName:
+        en: "BUYDATA NATCASH"
+        fr: "BUYDATA NATCASH"
+        ht: "BUYDATA NATCASH"
+      serviceCode: ""
+      paymentCode: ""
+      partnerCode: ""
+    offset: 3
+    limit: 3
+  - groupId: 5
+    groupCode: TOPUP
+    groupName:
+      en: "TOPUP"
+      fr: "TOPUP"
+      ht: "TOPUP"
+    processCodeList:
+    - processCode: "571000"
+      processName:
+        en: "TOPUP NATCASH"
+        fr: "TOPUP NATCASH"
+        ht: "TOPUP NATCASH"
+      serviceCode: ""
+      paymentCode: ""
+    - processCode: "571000"
+      processName:
+        en: "TOPUP NATCASH OTHER"
+        fr: "TOPUP NATCASH OTHER"
+        ht: "TOPUP NATCASH OTHER"
+      serviceCode: ""
+      paymentCode: ""
+      partnerCode: ""
+    offset: 3
+    limit: 3

@@ -1,0 +1,60 @@
+appName: "Tigerate Messaging"
+controllerPackages: ["vn.supperapp.apigw.messaging.restful.controllers"]
+
+server:
+  registerDefaultExceptionMappers: false
+  applicationConnectors:
+    - type: http
+      port: 9002
+#    - type: https
+#      port: 8585
+#      keyStorePath: ../ssl/emoney_ks.jks
+#      keyStorePassword: eMoneyKh!#13
+#      keyStoreType: JKS
+#      keyStoreProvider:
+
+#      trustStorePath: ../ssl/truststore_server
+#      trustStorePassword: Abc@123
+#      trustStoreType: JKS
+#      trustStoreProvider:
+  adminConnectors:
+    - type: http
+      port: 8085
+
+assets:
+  mappings:
+    /assets: /assets
+  overrides:
+    # Override requests to /dashboard/${1} to instead look in
+    # ${working directory}/src/main/resources/assets/${1}
+    /assets: D:\natcom\natcash\sources\natcash-apigateway-enduser\assets
+
+dbAppEncrypted: false
+dbApp:
+  driverClass: org.postgresql.Driver
+  user: "vnpetid"
+  password: "twnjdcDyCB3kk1ifbcn0Q-zxMWNajcqq"
+  url: "jdbc:postgresql://115.146.120.253:5432/vnpetid"
+  validationQuery: SELECT 1
+  checkConnectionWhileIdle: true
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.show_sql: true
+    hibernate.format_sql: true
+    hibernate.hbm2ddl.auto: update
+    org.hibernate.flushMode: MANUAL
+
+# Logging settings.
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      timeZone: system
+    - type: file
+      timeZone: system
+      currentLogFilename: '../logs/full.log'
+      archivedLogFilenamePattern: '../logs/full.log.%d-%i.zip'
+      archive: true
+      archivedFileCount: 30
+      maxFileSize: '500mb'

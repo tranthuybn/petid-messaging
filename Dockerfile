@@ -11,17 +11,11 @@
 #
 #CMD ["catalina.sh", "run"]
 
-FROM maven:3.6.3-jdk-11 AS build
-
-COPY src /home/app/src
-COPY pom.xml /home/app
-
-RUN mvn -f /home/app/pom.xml clean install
 
 FROM openjdk:15
 
-COPY --from=build /home/app/target/supper-app-messenging-1.0-SNAPSHOT-shaded.jar /usr/app/app.jar
-COPY src/main/resources /usr/app/
+COPY target/supper-app-messenging-1.0-SNAPSHOT-shaded.jar /usr/app/app.jar
+COPY target/classes /usr/app/
 
 WORKDIR /usr/app
 
